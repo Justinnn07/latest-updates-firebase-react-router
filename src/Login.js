@@ -21,7 +21,6 @@ const Login = ({ setLoading, setLoggedInInfo }) => {
 
   useEffect(() => {
     getUserIfLoggedIn();
-
     //eslint-disable-next-line
   }, []);
 

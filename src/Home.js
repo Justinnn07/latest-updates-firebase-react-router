@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { auth, db } from "./firebase";
+import { useNavigate } from "react-router-dom";
 
 const Home = ({ setLoggedInInfo }) => {
   const [query, setQuery] = useState("");
   const [_mapData, set_MapData] = useState([]);
+
+  const navigate = useNavigate();
 
   const addtoDb = async () => {
     try {
@@ -30,6 +33,7 @@ const Home = ({ setLoggedInInfo }) => {
     auth.signOut();
     localStorage.removeItem("user");
     setLoggedInInfo({});
+    navigate("/login");
   };
 
   return (
