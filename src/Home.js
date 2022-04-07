@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 const Home = ({ setLoggedInInfo }) => {
   const [query, setQuery] = useState("");
   const [_mapData, set_MapData] = useState([]);
-
   const navigate = useNavigate();
 
   const addtoDb = async () => {
